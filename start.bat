@@ -1,2 +1,2 @@
-python hell1.py < input
+python mtx.py < input
 pause

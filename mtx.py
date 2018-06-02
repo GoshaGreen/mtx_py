@@ -6,11 +6,8 @@ def isDiagonal(A):
     for i in range(len(A)):
         for j in range(len(A[0])):
             print(i,j,A[i][j])
-            if i!=j:
-                print(1)
-                if A[i][j]!=zero:
-                    print(2)
-                    return False
+            if i!=j and A[i][j]!=zero:
+                return False
     return True
 
 def isToeplitz(A):
@@ -44,18 +41,14 @@ def getMatrix():
 ##    3
 ##    1 2 3
 ##    2 3 4
-
     n = input() # read rows number
     m = input() # read collums number
     ## !!! Check that it is int, than convert it to int
     n = int(n)
     m = int(m)
-
     A = [0] * n  # initialize matrix rows with zeros 
-
     for i in range(n): # read matrix
         A[i] = input().split()
-        
     return A
 
 def matrixToPrint(A):
@@ -74,6 +67,4 @@ print("square: ", isSquare(AA))
 print("Toeplitz: ", isToeplitz(AA))
 print("Hankel: ", isHankel(AA))
 print("Diagonal: ", isDiagonal(AA))
-for i in range(10):
-    print(i)
 
